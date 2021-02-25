@@ -45,39 +45,16 @@ app.use(express.urlencoded({
     extended: true
 })); 
 // app.use(express.json());
-
 app.use(methodOverride('_method'));
 
-// __________________
-// VIEW ENGINE
-// __________________
-// app.set('view engine', 'jsx');
-// app.engine('jsx', require('express-react-views').createEngine());
 
 // ===========
 // CONTROLLER
 // ===========
-const projectController = require('./controllers/projectController.js')
-app.use('/projects', projectController)
-const blogController = require('./controllers/blogController.js')
-app.use('/blogs', blogController)
-
-//___________________
-// Non-Rest Routes
-//___________________
-// Root redirects to HomePage 
-// app.get('/', (req, res) => {
-//     res.redirect('/home');
-// });
-
-// app.get('/home', (req, res) => {
-//     res.render('HomePage.jsx');
-// });
-
-// Express checks routes in the order they are declared; and since index.html is a default filename which is used by static middleware, it shows index.html content.
-// To fix this, I placed app.use(express.static) after app.get('/')
-// So by declaring app.use(express.static) after app.get('/'); it is able to NOT render the default .html file in 'public' and redirects to the "HomePage" React-Views component   
-// app.use(express.static('public'));
+// const projectController = require('./controllers/projectController.js')
+// app.use('/projects', projectController)
+// const blogController = require('./controllers/blogController.js')
+// app.use('/blogs', blogController)
 
 //___________________
 //Listener
